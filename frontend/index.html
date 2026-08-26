@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Bug Investigation System</title>
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header>
+    <h1>🔍 AI Bug Investigation System</h1>
+    <p class="subtitle">Beyond bug tracking: AI-driven root cause analysis, impact mapping &amp; regression targeting</p>
+  </header>
+
+  <main>
+    <section class="card" id="input-card">
+      <h2>1. Report a Bug</h2>
+      <label for="title">Title</label>
+      <input id="title" type="text" placeholder="e.g. Coupon discount lost after refresh" />
+
+      <label for="description">Description</label>
+      <textarea id="description" rows="4" placeholder="Describe what happened, steps taken, expected vs actual behaviour..."></textarea>
+
+      <button id="analyze-btn">🚀 Investigate Bug</button>
+      <div id="loading" class="hidden">Running investigation pipeline...</div>
+    </section>
+
+    <section id="results" class="hidden">
+
+      <section class="card">
+        <h2>2. Understanding the Bug</h2>
+        <p><strong>Detected module:</strong> <span id="module-out"></span></p>
+        <p class="muted" id="keywords-out"></p>
+      </section>
+
+      <section class="card">
+        <h2>3. Reproduction Scenarios</h2>
+        <ol id="scenarios-out"></ol>
+      </section>
+
+      <section class="card">
+        <h2>4. Predicted Root Causes</h2>
+        <div id="causes-out"></div>
+      </section>
+
+      <section class="card">
+        <h2>5. Related Existing Bugs</h2>
+        <div id="related-out"></div>
+      </section>
+
+      <section class="card">
+        <h2>6. Bug → Impact Graph</h2>
+        <div id="graph-out"></div>
+      </section>
+
+      <section class="card">
+        <h2>7. Impacted Modules &amp; Regression Tests</h2>
+        <div id="regression-out"></div>
+      </section>
+
+      <section class="card">
+        <h2>8. Recommended Testing Strategy</h2>
+        <p id="strategy-out"></p>
+      </section>
+
+    </section>
+
+    <section class="card">
+      <h2>Full System Module Map</h2>
+      <div id="full-graph"></div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

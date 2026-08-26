@@ -1,0 +1,5 @@
+backend/bugai.db
+backend/__pycache__/
+backend/ai/__pycache__/
+*.pyc
+.venv/
